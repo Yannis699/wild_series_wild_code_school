@@ -1,0 +1,33 @@
+
+// customize some Bootstrap variables
+$primary: darken(#100e0e, 20%);
+$secondary : #565151;
+$primary-light: #1f1d1d;
+$text: white;
+
+
+$theme-colors:(
+ "primary": $primary,
+ "secondary" : $secondary, 
+ "primary-light": $primary-light
+);
+
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    color: $primary;
+}
+
+.navbar-nav > li{
+    padding-left:50px;
+    padding-right:30px;
+    font-size: larger;
+  }
+
+.navbar {
+    background-color: $secondary;
+}
+
+
