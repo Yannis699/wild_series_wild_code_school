@@ -14,6 +14,9 @@ Encore
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
+    .copyFiles({
+        from: './assets/images',
+    })
     /*
      * ENTRY CONFIG
      *
@@ -48,6 +51,7 @@ Encore
     .configureBabel((config) => {
         config.plugins.push('@babel/plugin-proposal-class-properties');
     })
+    
 
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
@@ -72,30 +76,19 @@ Encore
     //.autoProvidejQuery()
 ;
 
-Encore
-    // ...
-
-    // enable just the one you want
-
-    // processes files ending in .scss or .sass
-    .enableSassLoader()
-
-    // processes files ending in .less
-    .enableLessLoader()
-
-    // processes files ending in .styl
-    .enableStylusLoader()
-;
-
+//module.exports = Encore.getWebpackConfig();
 const fullConfig = Encore.getWebpackConfig();
+
 fullConfig.devServer = {
     headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
         'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
     },
+
     watchFiles: {
         paths: ['templates/**/*.html.twig'],
     },
 };
+
 module.exports = fullConfig;
