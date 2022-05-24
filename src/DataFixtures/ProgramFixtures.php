@@ -12,9 +12,11 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $program = new Program();
-        $program->setTitle('Walking dead');
-        $program->setSynopsis('Des zombies envahissent la terre');
-        $program->setCategory($this->getReference('category_Action'));
+        $program
+                ->setTitle('Walking dead')
+                ->setSynopsis('Des zombies envahissent la terre')
+                ->setCategory($this->getReference('category_Action'));
+                
         $manager->persist($program);
 
         $program1 = new Program();
