@@ -1,34 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Wild Series</title>
-</head>
-<body>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">Wild Séries</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
 
-	<div class="collapse navbar-collapse d-flex justify-content-end p-2" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link" href="#">Mes favoris</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Déconnexion</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">John Doe</a>
-			</li>
-			<a class="navbar-brand" href="#">
-				<img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-			</a>
-		</ul>
-	</div>
-</nav>
+{% extends 'base.html.twig' %}
 
-   <h1 class="border mt-5">{{ website }} index</h1>
-</body>
-</html>
+{% block title %}All programs{% endblock %}
+
+{% block body %}
+    <h1>Toutes les séries de la table program : </h1>
+    {% for program in programs %}
+        <div>
+            <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
+            <p>{{ program.synopsis }}</p>
+        </div>
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
+{% endblock %}
