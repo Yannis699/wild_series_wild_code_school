@@ -1,22 +1,27 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Concert+One&family=Kaushan+Script&display=swap');
 
 $primary: darken(#100e0e, 20%);
 $secondary : #565151;
 $primary-light: #1f1d1d;
 $text: white;
+$border: #b00707;
 
 
 $theme-colors:(
  "primary": $primary,
  "secondary" : $secondary, 
- "primary-light": $primary-light
+ "primary-light": $primary-light,
+ "text" : $text,
+ "border" : $border
 );
 
 
 // the ~ allows you to reference things in node_modules
 
 body {
-    color: $primary;
+    background-color: $primary;
+    color: $text;
 }
 
 .navbar-nav > li{
