@@ -1,10 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wild Series{% endblock %}
+{% block title %}Wild Series
+{% endblock %}
 
 {% block body %}
 
-{% include '/_navbar.html.twig'%}
+	{% include '/_navbar.html.twig'%}
+	<div class="container-fluid p-0 m-0">
+		<div class="home_banner p-5">
+			<h1 class=" d-flex justify-content-start welcolme_message"> Bienvenue sur {{ website }}
+			</h1>
+			<p class="slogan">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+			<button class="btn btn-danger start-btn">
+                Commencer
+			</button>
+		</div>
 
-<h1 class="mt-4 d-flex justify-content-center">{{ website }} index</h1>
+		<div class="category-button">
+			<button class="btn">
+				Populaire
+			</button>
+			<button class="btn">
+				Acteurs
+			</button>
+			<button class="btn">
+				Catégorie
+			</button>
+		</div>
+
+        <div class = "list">
+            <h2> Derniers ajouts </h2>
+        </div>
+	</div>
 {% endblock %}

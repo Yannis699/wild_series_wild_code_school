@@ -6,6 +6,8 @@ $secondary : #565151;
 $primary-light: #1f1d1d;
 $text: white;
 $border: #b00707;
+$textbanner: #333333;
+
 
 
 $theme-colors:(
@@ -13,8 +15,10 @@ $theme-colors:(
  "secondary" : $secondary, 
  "primary-light": $primary-light,
  "text" : $text,
- "border" : $border
+ "border" : $border,
+ "textbanner" : $textbanner
 );
+
 
 
 // the ~ allows you to reference things in node_modules
@@ -22,6 +26,7 @@ $theme-colors:(
 body {
     background-color: $primary;
     color: $text;
+    font-family: 'Concert One';
 }
 
 .navbar-nav > li{
@@ -34,3 +39,24 @@ body {
     background-color: $text;
 }
 
+
+.home_banner {
+    background-color: $text ;
+    color: $textbanner;
+}
+
+
+.welcolme_message{
+    font-family: 'Kaushan Script';
+    font-size: 43px;
+}
+
+.slogan {
+    font-family: 'Abril Fatface';
+    font-size: 19px;
+}
+
+.start-btn {
+    font-family: 'Kaushan Script';
+    font-size: 20px;
+}

@@ -24,18 +24,20 @@ class CategoryController extends AbstractController {
     #[Route('/{categoryName}', name: 'show')]
     public function show( string $categoryName, CategoryRepository $categoryRepository){
 
-        $categoryName = $categoryRepository->findOneBy(['name' => $categoryName]);
+        $categoryName= $categoryRepository->findOneBy(['name' => $categoryName]);
         
         if (!$categoryName) {
             throw $this->createNotFoundException(
                 'No category with : '. $categoryName .' found in program\'s table.'
             );
-    } 
+    } else {
 
-    return $this->render('category/index.html.twig', [
+        $categoryName = $categoryRepository-> findBy(array('id' => 'DESC'));
+
+    return $this->render('category/show.html.twig', [
         'category' => $categoryName,
     ]);
    
 }
 
-}
+    }}

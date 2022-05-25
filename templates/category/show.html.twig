@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Toutes les séries de la table program : </h1>
+    {% for category in categories %}
+        <ul>
+            <li> {{category.name}} </li>
+        </ul>
+
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
+{% endblock %}
