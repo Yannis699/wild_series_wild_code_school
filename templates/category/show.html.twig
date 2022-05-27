@@ -2,9 +2,11 @@
 
 {% block body %}
     <h1>Toutes les séries de la table program : </h1>
-    {% for category in categories %}
+    {% for program in programs %}
         <ul>
-            <li> {{category.name}} </li>
+            <li> {{program.title}} </li>
+            <li> {{program.synopsis}} </li>
+            <li> {{program.poster}} </li>
         </ul>
 
     {% else %}
