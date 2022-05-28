@@ -15,6 +15,10 @@ class ProgramController extends AbstractController
     {
         $programs = $programRepository->findAll();
 
+        if(!$programs) {
+            throw $this->createNotFoundException('No programs found !');
+        }
+
         return $this->render('program/index.html.twig', [
             'programs' => $programs,
          ]);
