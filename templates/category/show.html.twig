@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Wild Series{% endblock %}
+
 {% block body %}
+
+{% include 'program/_navbar.html.twig' %}
+
     <h1>Toutes les séries de la table program : </h1>
     {% for program in programs %}
         <ul>
@@ -8,6 +13,7 @@
             <li> {{program.synopsis}} </li>
             <li> {{program.poster}} </li>
         </ul>
+        <button class="btn btn-dark"><a href="/program/show/{{ program.id }}">En savoir plus</a></button>
 
     {% else %}
         Aucune série trouvée.

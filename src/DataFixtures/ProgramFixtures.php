@@ -15,7 +15,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program
             ->setTitle('Walking dead')
             ->setSynopsis('Des zombies envahissent la terre')
-            ->setCategory($this->getReference('category_Action'));
+            ->setCategory($this->getReference('category_Action'))
+            ->setPoster('https://img.betaseries.com/ZGswN8VehpTnr5_39rj8XlyjiAE=/400x600/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffonds%2Fposter%2Fd338e649f57a342598ec430862798ad3.jpg');
 
         $manager->persist($program);
 
@@ -23,7 +24,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program1
             ->setTitle('American Horror Story')
             ->setSynopsis('A chaque saison, son histoire. American Horror Story nous embarque dans des récits à la fois poignants et cauchemardesques, mêlant la peur, le gore et le politiquement correct. De quoi vous confronter à vos plus grandes frayeurs !')
-            ->setCategory($this->getReference('category_Horreur'));
+            ->setCategory($this->getReference('category_Horreur'))
+            ->setPoster('https://img.betaseries.com/ZGswN8VehpTnr5_39rj8XlyjiAE=/400x600/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffonds%2Fposter%2Fd338e649f57a342598ec430862798ad3.jpg');
 
         $manager->persist($program1);
 
