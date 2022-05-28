@@ -3,5 +3,10 @@
 {% block title %} Wild Series {% endblock %}
 
 {% block body %}
-    <h1> Saison {{season.number}} </h1>
+
+{% include 'program/_navbar.html.twig' %}
+
+
+    <h1> Saison {{season.number}} de {{season.program.title}} </h1>
+    <p> {{season.description}}</p>
 {% endblock %}
