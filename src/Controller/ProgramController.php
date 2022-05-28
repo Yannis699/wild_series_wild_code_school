@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProgramRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
+use App\Repository\CategoryRepository;
+use App\Entity\Season;
 
 #[Route('/program', name: 'program_')]
 class ProgramController extends AbstractController
@@ -39,7 +42,7 @@ class ProgramController extends AbstractController
             'program' => $program,
         ]);
     }
-    
+
   
     
 }
