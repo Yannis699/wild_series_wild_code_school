@@ -2,14 +2,15 @@
 // src/Controller/ProgramController.php
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Season;
+use App\Entity\Episode;
+use App\Entity\Program;
+use App\Repository\ProgramRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\ProgramRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
-use App\Repository\CategoryRepository;
-use App\Entity\Season;
-use App\Entity\Program;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/program', name: 'program_')]
 class ProgramController extends AbstractController
@@ -28,7 +29,7 @@ class ProgramController extends AbstractController
          ]);
     }
 
-    #[Route('/show/{id<^[0-9]+$>}', name: 'show')]
+    /* #[Route('/show/{id<^[0-9]+$>}', name: 'show')]
     public function show(int $id, ProgramRepository $programRepository):Response
     {
         $program = $programRepository->findOneBy(['id' => $id]);
@@ -42,7 +43,7 @@ class ProgramController extends AbstractController
         return $this->render('program/show.html.twig', [
             'program' => $program,
         ]);
-    }
+    } */
 
     #[Route('/{programId}/season/{seasonId}', methods: 'GET', name: 'season_show')]
     #[Entity('season', options: ['id' => 'seasonId'])]
@@ -60,6 +61,6 @@ class ProgramController extends AbstractController
         $categories = $categoryRepository->findAll();
 
         return $this->render('program/episode_show.html.twig', array('episode' => $episode, 'categories' => $categories));
-    }
+    } 
     
 }

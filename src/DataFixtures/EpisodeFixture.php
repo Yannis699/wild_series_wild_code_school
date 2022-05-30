@@ -1,5 +1,8 @@
 <?php
 
+/*
+
+
 namespace App\DataFixtures;
 
 use App\Entity\Episode;
@@ -8,7 +11,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 
-class EpisodeFixtures extends Fixture implements DependentFixtureInterface
+class EpisodeFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
@@ -37,4 +40,6 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
             SeasonFixtures::class,
           ];
     }
-}
+} 
+
+*/
