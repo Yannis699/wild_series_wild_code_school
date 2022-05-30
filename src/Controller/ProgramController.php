@@ -9,6 +9,7 @@ use App\Repository\ProgramRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use App\Repository\CategoryRepository;
 use App\Entity\Season;
+use App\Entity\Program;
 
 #[Route('/program', name: 'program_')]
 class ProgramController extends AbstractController
@@ -43,6 +44,22 @@ class ProgramController extends AbstractController
         ]);
     }
 
+    #[Route('/{programId}/season/{seasonId}', methods: 'GET', name: 'season_show')]
+    #[Entity('season', options: ['id' => 'seasonId'])]
+    public function showSeason(Season $season, CategoryRepository $categoryRepository)
+    {
+        $categories = $categoryRepository->findAll();
+
+        return $this->render('program/season_show.html.twig', array('season' => $season, 'categories' => $categories));
+    }
   
+    #[Route('/{programId}/season/{seasonId}/episode/{episodeId}', methods: 'GET', name:'episode_show')]
+    #[Entity('episode', options: ['id' => 'episodeId'])]
+    public function showEpisode(Episode $episode, CategoryRepository $categoryRepository)
+    {
+        $categories = $categoryRepository->findAll();
+
+        return $this->render('program/episode_show.html.twig', array('episode' => $episode, 'categories' => $categories));
+    }
     
 }

@@ -7,6 +7,7 @@
 {% include 'program/_navbar.html.twig' %}
 
 
-    <h1> Saison {{season.number}} de {{season.program.title}} </h1>
-    <p> {{season.description}}</p>
+                {% for episode in season.episodes %}
+                    <option value="/program/{{ season.program.id }}/season/{{ season.id }}/episode/{{ episode.id}}">S{{ episode.season.number }}-e{{ episode.number }} - "{{ episode.title }}</option>
+                {% endfor %}
 {% endblock %}
